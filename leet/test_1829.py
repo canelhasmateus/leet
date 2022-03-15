@@ -59,7 +59,6 @@ def cumulative_iterator( rows: Iterable ):
 		yield result
 
 
-
 def maximum_xor( row: List[ int ], extrema: int ):
 	reduced = reduce( operator.xor, row )
 
@@ -83,9 +82,17 @@ def answer( rows: List[ int ], extrema: int ):
 		xored = maximum_xor( prefix, extrema )
 		result.append( xored )
 
-	return result[::-1]
+	return result[ ::-1 ]
 
+##
+##
 
 def test_a():
-	assert answer( [0,1,1,3] , 2  ) == [0,3,2,3]
+	assert answer( [ 0, 1, 1, 3 ], 2 ) == [ 0, 3, 2, 3 ]
 
+
+def test_b():
+	assert answer( [2,3,4,7], 3 ) == [5,2,6,5]
+
+def test_c():
+	assert answer( [0,1,2,2,5,7], 3 ) == [4,3,6,4,6,7]
