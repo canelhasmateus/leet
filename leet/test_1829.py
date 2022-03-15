@@ -44,4 +44,48 @@
 # nums is sorted in ascending order.
 
 
+from __future__ import annotations
+
+import operator
+from functools import reduce
+from typing import Iterable, List
+
+
+def cumulative_iterator( rows: Iterable ):
+	result = [ ]
+	for element in rows:
+		result.append( element )
+
+		yield result
+
+
+
+def maximum_xor( row: List[ int ], extrema: int ):
+	reduced = reduce( operator.xor, row )
+
+	maximum = 0
+	best_candidate = 0
+	for candidate in range( 2 ** extrema ):
+		current_xor = reduced ^ candidate
+
+		if current_xor > maximum:
+			maximum = current_xor
+			best_candidate = candidate
+
+	return best_candidate
+
+
+def answer( rows: List[ int ], extrema: int ):
+	slices = cumulative_iterator( rows )
+
+	result = [ ]
+	for prefix in slices:
+		xored = maximum_xor( prefix, extrema )
+		result.append( xored )
+
+	return result[::-1]
+
+
+def test_a():
+	assert answer( [0,1,1,3] , 2  ) == [0,3,2,3]
 
