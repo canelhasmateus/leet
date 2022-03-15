@@ -51,38 +51,22 @@ from functools import reduce
 from typing import Iterable, List
 
 
-def cumulative_iterator( rows: Iterable ):
-	result = [ ]
-	for element in rows:
-		result.append( element )
-
-		yield result
+def my_format( value, length ):
+	return bin( value ).replace( "0b", "" ).zfill( length )
 
 
-def maximum_xor( row: List[ int ], extrema: int ):
-	reduced = reduce( operator.xor, row )
+def answer( nums: List[int], maximumBit: int):
+	result = [ 0 for _ in nums]
+	total_xor = 0
+	extrema = 2 ** maximumBit - 1
+	length = len(nums)
+	for i in range( length):
+		element = nums[i]
+		total_xor = total_xor ^ element
+		result[ length - i - 1 ] = extrema - total_xor
 
-	maximum = 0
-	best_candidate = 0
-	for candidate in range( 2 ** extrema ):
-		current_xor = reduced ^ candidate
+	return result
 
-		if current_xor > maximum:
-			maximum = current_xor
-			best_candidate = candidate
-
-	return best_candidate
-
-
-def answer( rows: List[ int ], extrema: int ):
-	slices = cumulative_iterator( rows )
-
-	result = [ ]
-	for prefix in slices:
-		xored = maximum_xor( prefix, extrema )
-		result.append( xored )
-
-	return result[ ::-1 ]
 
 ##
 ##
@@ -92,7 +76,8 @@ def test_a():
 
 
 def test_b():
-	assert answer( [2,3,4,7], 3 ) == [5,2,6,5]
+	assert answer( [ 2, 3, 4, 7 ], 3 ) == [ 5, 2, 6, 5 ]
+
 
 def test_c():
-	assert answer( [0,1,2,2,5,7], 3 ) == [4,3,6,4,6,7]
+	assert answer( [ 0, 1, 2, 2, 5, 7 ], 3 ) == [ 4, 3, 6, 4, 6, 7 ]
