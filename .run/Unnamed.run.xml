@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Unnamed" type="Java Scratch" nameIsGenerated="true">
-    <module name="wars" />
-    <shortenClasspath name="NONE" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>
