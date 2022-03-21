@@ -12,7 +12,7 @@ class Solution {
 
         }
     }
-    
+
     public static final String reverse( String s ) {
         return new StringBuffer(s).reverse().toString();
     }
@@ -21,9 +21,11 @@ class Solution {
         return reverse( s ) ;
     }
     public static void main( String[] args ) {
-        
+
+
         compare(  reverseOnly( "ab-cd" ) , "dc-ba");
-        
+        compare(  reverseOnly(  "a-bC-dEf-ghIj" ) , "j-Ih-gfE-dCba");
+
     }
     
     
