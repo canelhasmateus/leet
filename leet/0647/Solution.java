@@ -20,21 +20,22 @@ class Solution {
         return new StringBuilder( s ).reverse().toString();
     }
 
-    public static final List< String > generativePalindrome( String source, int l, int r ) {
+    public static final int countPalidromes( String source, int left, int right ) {
 
-        int                 length = source.length();
-        ArrayList< String > res    = new ArrayList<>();
+        int length = source.length();
+        int res    = 0;
 
-        if ( length == 0 || l < 0 || r >= length ) {
-            return res;
-        }
+        while ( left >= 0 && right < length ) {
 
-        String seed = source.substring( l, r + 1 );
-
-        if ( isPalidrome( seed ) ) {
-            List< String > leftFruits = generativePalindrome( source, l - 1, r );
-            res.add( seed );
-            res.addAll( leftFruits );
+            System.out.println( source.substring( left , right + 1 ));
+            if ( source.charAt( left ) == source.charAt( right ) ) {
+                res += 1;
+                left -= 1;
+                right += 1;
+            }
+            else {
+                break;
+            }
 
         }
 
@@ -52,7 +53,7 @@ class Solution {
 
         for ( int i = 0; i < s.length(); i++ ) {
             for ( int j = i; j < s.length(); j++ ) {
-                results.add( s.substring( i , j + 1 ) );
+                results.add( s.substring( i, j + 1 ) );
             }
 
 
@@ -69,34 +70,57 @@ class Solution {
                 .filter( Solution::isPalidrome )
                 .collect( Collectors.toList() );
     }
-    public static final List< String > fastPalidromicSubstrings( String s ) {
 
-        List< String > o = new ArrayList<>();
+    public static final int fastPalidromicSubstrings( String s ) {
 
+
+        int res = 0;
         int length = s.length();
         for ( int i = 0; i < length; i++ ) {
 
-            List< String > fruits = generativePalindrome( s, i, i );
-            o.addAll( fruits );
+            res += countPalidromes( s, i, i );
+            res += countPalidromes( s, i, i + 1);
 
         }
-        return o;
+        return res;
     }
 
 
     public static void main( String[] args ) {
 
         compare( palidromicSubstring( "abc" ).size(), 3 );
-
         compare( palidromicSubstring( "aaa" ).size(), 6 );
+        compare( palidromicSubstring( "aba" ).size(), 4 );
 
-        compare( palidromicSubstring( "aba" ).size(), 4);
+        compare( fastPalidromicSubstrings( "abc" ), 3 );
+        System.out.println();
+        compare( fastPalidromicSubstrings( "aaa" ), 6 );
+        System.out.println();
+        compare( fastPalidromicSubstrings( "aba" ), 4 );
+
+
 
     }
 
 
     public int countSubstrings( String s ) {
 
-        return palidromicSubstring( s ).size();
+        return fastPalidromicSubstrings( s );
     }
+
+
+//    We explore the fact that the 'central' part of a palindrome is also a palindrome.
+//    ( Explore the compositional structure )
+//    Thinking in terms of the 'reachability' matrix, to be an palindrome, an entry need to be  'near' a known palidrome.
+//    SO we just 'propagate' the 'palindromeness', starting from the smallest known palidrome 'seeds' ( sort of a terminal case ), which is a single character
+//    So, we only need to navigate through this 'known' path. The trick is the way in which we do that:
+//    If we checked one at the left, and then one at the right of our starting entry, we would end up counting some palidromes twice:
+//        Ex: Starting at 00, we would check 01 to the right; Then, at the next iteration at 11, we would check at the top which is 01 again.
+//    To circunvent this problem, we propagate  only through the diagonal to the upper right.
+//    Then, to make sure we cover the entire matrix, we manually propagate from the entry to the right ( still through the diagonal).
+//    Since a matrix can be fully covered from going along its 'even' and 'odd' diagonals, we can be sure it will be fully covered.
+//    Since a matrix diagonals are not overlapping, we can be sure we wont count twice.
+
+
+
 }
