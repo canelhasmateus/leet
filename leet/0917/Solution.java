@@ -1,10 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 class Solution {
 
 
@@ -19,6 +12,7 @@ class Solution {
 
         }
     }
+
 
     public static final String reverse( String s ) {
         return new StringBuffer( s ).reverse().toString();
@@ -66,13 +60,13 @@ class Solution {
 
         compare( reverseOnly( "ab-cd" ), "dc-ba" );
         compare( reverseOnly( "a-bC-dEf-ghIj" ), "j-Ih-gfE-dCba" );
-
+        compare( reverseOnly( "Test1ng-Leet=code-Q!" ), "Qedo1ct-eeLg=ntse-T!" );
     }
-
 
     public String reverseOnlyLetters( String s ) {
 
         return reverseOnly( s );
 
     }
+
 }
