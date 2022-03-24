@@ -27,11 +27,12 @@ class Solution {
 
         while ( left >= 0 && right < length ) {
 
-            System.out.println( source.substring( left , right + 1 ));
             if ( source.charAt( left ) == source.charAt( right ) ) {
+                System.out.println( (left + 1) + "," + (right + 1));
                 res += 1;
                 left -= 1;
                 right += 1;
+
             }
             else {
                 break;
@@ -88,16 +89,14 @@ class Solution {
 
     public static void main( String[] args ) {
 
-        compare( palidromicSubstring( "abc" ).size(), 3 );
-        compare( palidromicSubstring( "aaa" ).size(), 6 );
-        compare( palidromicSubstring( "aba" ).size(), 4 );
-
-        compare( fastPalidromicSubstrings( "abc" ), 3 );
-        System.out.println();
-        compare( fastPalidromicSubstrings( "aaa" ), 6 );
-        System.out.println();
-        compare( fastPalidromicSubstrings( "aba" ), 4 );
-
+//        compare( palidromicSubstring( "abc" ).size(), 3 );
+//        compare( palidromicSubstring( "aaa" ).size(), 6 );
+//        compare( palidromicSubstring( "aba" ).size(), 4 );
+//
+//        compare( fastPalidromicSubstrings( "abc" ), 3 );
+//        compare( fastPalidromicSubstrings( "aaa" ), 6 );
+//        compare( fastPalidromicSubstrings( "aba" ), 4 );
+fastPalidromicSubstrings( "rotavator" );
 
 
     }
