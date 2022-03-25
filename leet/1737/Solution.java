@@ -17,12 +17,12 @@ class Solution {
     }
 
 
-    public static int minCharacters( String a, String b ) {
+    public static int sminCharacters( String a, String b ) {
 
 
         var first  = a.length() > b.length() ? 9999 : 0;
         var second = b.length() > a.length() ? 9999 : 0;
-        var third  = a.length() > b.length() + 1 ? 9999 : 9999;
+        var third  = a.length() > b.length() + 1 ? 9999 : 0;
 
         for ( int i = 0; i < Math.min( a.length(), b.length() ); i++ ) {
 
@@ -37,6 +37,14 @@ class Solution {
                 second++;
             }
 
+            if ( characterB != characterA) {
+                third++;
+                if ( third > 1 ) {
+                    third = 9999;
+                }
+
+            }
+
         }
 
         return Stream.of( first, second, third )
@@ -44,12 +52,16 @@ class Solution {
                      .orElse( 0 );
     }
 
+    public int minCharacters(String a, String b) {
+        return Solution.sminCharacters( a, b );
+    }
 
     public static void main( String[] args ) {
 
-        compare( minCharacters( "aba", "caa" ), 2 );
-        compare( minCharacters( "dabadd", "cda" ), 2 );
+        compare( sminCharacters( "aba", "caa" ), 2 );
+        compare( sminCharacters( "dabadd", "cda" ), 2 );
 
 
     }
+
 }
