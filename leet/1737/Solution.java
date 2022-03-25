@@ -22,9 +22,7 @@ class Solution {
 
         var first  = a.length() > b.length() ? 9999 : 0;
         var second = b.length() > a.length() ? 9999 : 0;
-        var third = a.length() > b.length() + 1
-                    ? 9999
-                    : 9999;
+        var third  = a.length() > b.length() + 1 ? 9999 : 9999;
 
         for ( int i = 0; i < Math.min( a.length(), b.length() ); i++ ) {
 
