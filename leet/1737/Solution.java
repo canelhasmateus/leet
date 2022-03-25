@@ -16,26 +16,6 @@ class Solution {
         }
     }
 
-    public static boolean strictlyLess( String a, String b ) {
-
-        for ( int i = 0; i < a.length(); i++ ) {
-            char characterA = a.charAt( i );
-            char characterB = b.charAt( i );
-
-            if ( characterA >= characterB ) {
-                return false;
-            }
-
-        }
-        return true;
-
-    }
-
-
-    public static int conditionC( ) {
-
-        return 0;
-    }
 
 
     public static int minCharacters( String a, String b ) {
@@ -71,6 +51,7 @@ class Solution {
     public static void main( String[] args ) {
 
         compare( minCharacters( "aba", "caa" ), 2 );
+        compare( minCharacters( "dabadd", "cda" ), 2 );
 
 
     }
