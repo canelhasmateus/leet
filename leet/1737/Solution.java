@@ -17,17 +17,16 @@ class Solution {
     }
 
 
-
     public static int minCharacters( String a, String b ) {
 
 
-        var first  = 0;
-        var second = 0;
+        var first  = a.length() > b.length() ? 9999 : 0;
+        var second = b.length() > a.length() ? 9999 : 0;
         var third = a.length() > b.length() + 1
                     ? 9999
                     : 9999;
 
-        for ( int i = 0; i < a.length(); i++ ) {
+        for ( int i = 0; i < Math.min( a.length(), b.length() ); i++ ) {
 
             char characterA = a.charAt( i );
             char characterB = b.charAt( i );
