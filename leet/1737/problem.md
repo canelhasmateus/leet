@@ -2,7 +2,6 @@
 
 Medium
 
-229252Add to ListShare
 
 You are given two strings `a` and `b` that consist of lowercase letters. In one operation, you can change any character in `a` or `b` to **any lowercase letter**.
 
