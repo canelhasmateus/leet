@@ -32,12 +32,12 @@ class Solution {
         for ( int i = 0; i < 25; i++ ) {
 
             res = Math.min( res, a.length() - cumSumA[ i ] + cumSumB[ i ] );
-
             res = Math.min( res, b.length() - cumSumB[ i ] + cumSumA[ i ] );
+
+
         }
 
         return res;
-
     }
 
     public static int[] prefixSum( int[] freq ) {
@@ -50,17 +50,17 @@ class Solution {
     }
 
     public static int[] letterFreq( String a ) {
+
         int[] res = new int[ 26 ];
 
         for ( int i = 0; i < a.length(); i++ ) {
             char character = a.charAt( i );
             var  idx       = character - 'a';
             res[ idx ] += 1;
-        }
+
+        };
 
         return res;
-
-
     }
 
     public int minCharacters( String a, String b ) {
