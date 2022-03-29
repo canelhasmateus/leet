@@ -19,14 +19,19 @@ class Solution {
 
     public static List< Integer > sfindDuplicates( int[] nums ) {
 
-
         List< Integer > result = new ArrayList<>();
-        Set< Integer >  seen   = new HashSet<>();
+
         for ( int num : nums ) {
-            boolean novel = seen.add( num );
-            if ( !novel ) {
-                result.add( num );
+
+            int idx = Math.abs( num ) - 1;
+
+            if ( nums[ idx ] < 0 ) {
+                result.add( idx + 1 );
             }
+
+            nums[idx] *= -1;
+
+
         }
 
         return result;
@@ -40,15 +45,16 @@ class Solution {
             compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
         }
         {
-            int[] a   = { 1 , 1 , 2 };
-            int[] res = { 1};
+            int[] a   = { 1, 1, 2 };
+            int[] res = { 1 };
             compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
         }
         {
             int[] a   = { 1 };
-            int[] res = {  };
+            int[] res = {};
             compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
         }
     }
+
 
 }
