@@ -34,11 +34,21 @@ class Solution {
 
 
     public static void main( String[] args ) {
-
-        int[] a   = { 4, 3, 2, 7, 8, 2, 3, 1 };
-        int[] res = { 2, 3 };
-        compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
-
+        {
+            int[] a   = { 4, 3, 2, 7, 8, 2, 3, 1 };
+            int[] res = { 2, 3 };
+            compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
+        }
+        {
+            int[] a   = { 1 , 1 , 2 };
+            int[] res = { 1};
+            compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
+        }
+        {
+            int[] a   = { 1 };
+            int[] res = {  };
+            compare( sfindDuplicates( a ), Arrays.stream( res ).boxed().toList() );
+        }
     }
 
 }
