@@ -39,5 +39,7 @@ class Solution {
 
     public static void main( String[] args ) {
         compare( sangleClock( 12, 30 ), 165D );
+        compare( sangleClock( 3, 30 ), 75D );
+        compare( sangleClock( 3, 15 ), 7.5D );
     }
 }
