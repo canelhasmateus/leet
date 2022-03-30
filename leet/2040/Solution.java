@@ -34,7 +34,7 @@ class Solution {
             }
         }
 
-        return res.stream().sorted( Comparator.reverseOrder() ).toList().get( ( int ) k );
+        return res.stream().sorted( Comparator.naturalOrder() ).toList().get( ( int ) (k - 1) );
     }
 
     public static void main( String[] args ) {
