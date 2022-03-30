@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 class Solution {
 
     public static final < T > void compare( T actual, T expected ) {
@@ -20,7 +25,16 @@ class Solution {
 
     public static long skthSmallestProduct( int[] nums1, int[] nums2, long k ) {
 
-        return 0;
+        List< Long > res = new ArrayList<>();
+
+        for ( int i = 0; i < nums1.length; i++ ) {
+
+            for ( int j = 0; j < nums2.length; j++ ) {
+                res.add( ( long ) ( nums1[ i ] * nums2[ j ] ) );
+            }
+        }
+
+        return res.stream().sorted( Comparator.reverseOrder()).toList().get( ( int ) k );
     }
 
     public static void main( String[] args ) {
@@ -29,7 +43,7 @@ class Solution {
         int[] b = { 3, 4 };
         long  k = 2;
 
-        compare( skthSmallestProduct( a, b, k ), 8 );
+        compare( skthSmallestProduct( a, b, k ), 8L );
 
     }
 }
