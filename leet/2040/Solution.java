@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 class Solution {
 
@@ -28,13 +27,13 @@ class Solution {
         List< Long > res = new ArrayList<>();
 
         for ( int i = 0; i < nums1.length; i++ ) {
-
             for ( int j = 0; j < nums2.length; j++ ) {
                 res.add( ( long ) ( nums1[ i ] * nums2[ j ] ) );
             }
         }
 
-        return res.stream().sorted( Comparator.naturalOrder() ).toList().get( ( int ) (k - 1) );
+        List< Long > longs = res.stream().sorted( Comparator.naturalOrder() ).toList();
+        return longs.get( ( int ) ( k - 1 ) );
     }
 
     public static void main( String[] args ) {
@@ -53,5 +52,20 @@ class Solution {
 
             compare( skthSmallestProduct( a, b, k ), 0L );
         }
+        {
+            int[] a = { -2, -1, 0, 1, 2 };
+            int[] b = { -3, -1, 2, 4, 5 };
+            long  k = 3;
+
+            compare( skthSmallestProduct( a, b, k ), -6L );
+        }
+        {
+            int[] a = { -100000, 100000 };
+            int[] b = { -100000, 100000 };
+            long  k = 1;
+
+            compare( skthSmallestProduct( a, b, k ), -10000000000L );
+        }
+
     }
 }
