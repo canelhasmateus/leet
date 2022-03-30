@@ -34,16 +34,24 @@ class Solution {
             }
         }
 
-        return res.stream().sorted( Comparator.reverseOrder()).toList().get( ( int ) k );
+        return res.stream().sorted( Comparator.reverseOrder() ).toList().get( ( int ) k );
     }
 
     public static void main( String[] args ) {
 
-        int[] a = { 2, 5 };
-        int[] b = { 3, 4 };
-        long  k = 2;
+        {
+            int[] a = { 2, 5 };
+            int[] b = { 3, 4 };
+            long  k = 2;
 
-        compare( skthSmallestProduct( a, b, k ), 8L );
+            compare( skthSmallestProduct( a, b, k ), 8L );
+        }
+        {
+            int[] a = { -4, -2, 0, 3 };
+            int[] b = { 2, 4 };
+            long  k = 6;
 
+            compare( skthSmallestProduct( a, b, k ), 0L );
+        }
     }
 }
