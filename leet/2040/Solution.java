@@ -28,7 +28,9 @@ class Solution {
 
         for ( int i = 0; i < nums1.length; i++ ) {
             for ( int j = 0; j < nums2.length; j++ ) {
-                res.add( ( long ) ( nums1[ i ] * nums2[ j ] ) );
+                long i1 = nums1[ i ];
+                long i2 = nums2[ j ];
+                res.add( ( i1 * i2 ) );
             }
         }
 
