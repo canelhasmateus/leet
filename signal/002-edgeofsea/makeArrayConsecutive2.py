@@ -1,5 +1,14 @@
-def solution( param1, param2 ):
-	return param1
+def solution( statues ):
+
+	prev, *rest = sorted(statues)
+	total = 0
+	for current in rest:
+		diff = current - prev
+		total += diff - 1
+
+		prev = current
+
+	return total
 
 
 if __name__ == '__main__':
