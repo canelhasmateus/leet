@@ -1,5 +1,6 @@
-def solution( param1):
-	return False
+def solution( param1 ):
+	rev = param1[ ::-1 ]
+	return param1 == rev
 
 
 if __name__ == '__main__':
@@ -9,7 +10,9 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			assert solution( "aabaa") == True
+			isPalindrome = solution( "aabaa" )
+
+			self.assertTrue( isPalindrome )
 
 
 	unittest.main()
