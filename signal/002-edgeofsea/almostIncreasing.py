@@ -1,27 +1,24 @@
-def help( param1 ):
+def is_increasing( param1 ):
+	if len( param1 ) <= 1:
+		return True
+
 	prev, *rest = param1
-	prevDiff = 0
-	errors = 0
-
 	for current in rest:
-		diff = current - prev
-
-		if current > prev:
-			prev = current
-			prevDiff = diff
-		else:
-			errors += 1
-
-
-
-		if errors > 1:
+		if current <= prev:
 			return False
-
+		prev = current
 	return True
 
-
 def solution( param1 ):
-	return help( param1 )
+	tmp = [ i for i in param1]
+	for i in range(len(param1)):
+		element = tmp.pop( i )
+		if is_increasing( tmp ):
+			return True
+
+		tmp.insert( i , element)
+	return False
+
 
 
 if __name__ == '__main__':
