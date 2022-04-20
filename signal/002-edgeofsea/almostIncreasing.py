@@ -19,6 +19,7 @@ def num_errors( param1 ):
 	for current in rest:
 		if current <= prev:
 			a += 1
+
 		prev = current
 
 	return a
@@ -26,9 +27,7 @@ def num_errors( param1 ):
 def solution( param1 ):
 	tmp = [ i for i in param1]
 
-	if not num_errors( sorted( param1 ) ) > 1:
-		return False
-
+	
 	for i in range(len(param1)):
 		element = tmp.pop( i )
 		if is_increasing( tmp ):
