@@ -1,6 +1,9 @@
+import math
+
+
 def solution( array ):
 	prev = 1
-	maxProd = 0
+	maxProd = -math.inf
 	for current in array:
 		prod = current * prev
 		maxProd = prod if prod > maxProd else maxProd
@@ -18,7 +21,7 @@ if __name__ == '__main__':
 			assert solution( [ 3, 6, -2, -5, 7, 3 ] ) == 21
 
 		def test2( self ):
-			assert solution( [ -23 , 4, -3, 8 , -12] ) == 12
+			assert solution( [ -23, 4, -3, 8, -12 ] ) == -12
 
 
 	unittest.main()
