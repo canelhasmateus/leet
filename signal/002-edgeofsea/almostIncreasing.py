@@ -11,7 +11,7 @@ def help( param1 ):
 			prevDiff = diff
 		else:
 			errors += 1
-			
+
 
 
 		if errors > 1:
@@ -41,6 +41,9 @@ if __name__ == '__main__':
 
 		def test3( self ):
 			self.assertEquals( solution( [ 1, 2, 1, 2 ] ), False )
+
+		def test4( self ):
+			self.assertEquals( solution( [10, 1, 2, 3, 4, 5] ), True )
 
 
 	unittest.main()
