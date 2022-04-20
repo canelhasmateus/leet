@@ -16,7 +16,7 @@ if __name__ == '__main__':
 			self.assertFalse( solution( "abac" ) )
 
 		def test3( self ):
-			self.assertFalse( solution( "a" ) )
+			self.assertTrue( solution( "a" ) )
 
 
 	unittest.main()
