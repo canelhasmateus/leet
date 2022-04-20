@@ -26,6 +26,7 @@ if __name__ == '__main__':
 			           [ 2, 0, 3, 3 ] ]
 
 			self.assertEquals( solution( matrix ), 9 )
+
 		def test1( self ):
 			matrix = [[1, 1, 1, 0],
 			          [0, 5, 0, 1],
