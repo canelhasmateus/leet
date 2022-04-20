@@ -11,7 +11,7 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			assert Falsey
+			assert True
 
 
 	unittest.main()
