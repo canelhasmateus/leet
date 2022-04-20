@@ -22,6 +22,9 @@ if __name__ == '__main__':
 
 	class TestSolution( unittest.TestCase ):
 
+		def test0( self ):
+			self.assertEquals( solution([ 1 ]), True )
+
 		def test1( self ):
 			self.assertEquals( solution([ 1, 3, 2,  1]), False )
 
