@@ -1,5 +1,18 @@
-def solution( param1):
-	return 0
+def solution( matrix):
+
+	haunted = set()
+	res = 0
+	for (i , row) in enumerate( matrix ) :
+		for ( j , col) in enumerate( row ):
+
+			cost = matrix[i][j]
+			if cost == 0:
+				haunted.add( j )
+
+			if j not in haunted:
+				res += cost
+
+	return res
 
 
 
