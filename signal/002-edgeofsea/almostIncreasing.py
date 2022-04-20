@@ -11,12 +11,16 @@ def is_increasing( param1 ):
 
 def solution( param1 ):
 	tmp = [ i for i in param1]
+	if not is_increasing( sorted( param1 ) ):
+		return False
+	
 	for i in range(len(param1)):
 		element = tmp.pop( i )
 		if is_increasing( tmp ):
 			return True
 
 		tmp.insert( i , element)
+
 	return False
 
 
