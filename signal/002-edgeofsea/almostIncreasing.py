@@ -1,64 +1,16 @@
-def is_increasing( param1 ):
-	if len( param1 ) <= 1:
-		return True
-
-	prev, *rest = param1
-	for current in rest:
-		if current <= prev:
-			return False
-		prev = current
-	return True
-
-
-def get( tmp, i, n ):
-	try:
-		if 0 <= i <= len( tmp ):
-			return tmp[ i ]
-		return n
-	except:
-		return n
-
-
-def solution( param1 ):
-	tmp = [ i for i in param1 ]
-
-	for i in range( len( param1 ) ):
-		element = tmp[ i ]
-
-		if i == 0:
-			tmp[ i ] = tmp[ i + 1 ] - 1
-
-		elif i == len( param1 ) - 1:
-			tmp[ i ] = tmp[ i - 1 ] + 1
+def solution(sequence):
+	droppped = False
+	last = prev = min(sequence) - 1
+	for elm in sequence:
+		if elm <= last:
+			if droppped:
+				return False
+			else:
+				droppped = True
+			if elm <= prev:
+				prev = last
+			elif elm >= prev:
+				prev = last = elm
 		else:
-			tmp[ i ] = (tmp[ i - 1 ] + tmp[ i + 1 ]) / 2
-
-		if is_increasing( tmp ):
-			return True
-
-		tmp[ i ] = element
-
-	return False
-
-
-if __name__ == '__main__':
-	import unittest
-
-
-	class TestSolution( unittest.TestCase ):
-
-
-		def test1( self ):
-			self.assertEquals( solution( [ 1, 3, 2, 1 ] ), False )
-
-		def test2( self ):
-			self.assertEquals( solution( [ 1, 3, 2 ] ), True )
-
-		def test3( self ):
-			self.assertEquals( solution( [ 1, 2, 1, 2 ] ), False )
-
-		def test4( self ):
-			self.assertEquals( solution( [ 10, 1, 2, 3, 4, 5 ] ), True )
-
-
-	unittest.main()
+			prev, last = last, elm
+	return True
