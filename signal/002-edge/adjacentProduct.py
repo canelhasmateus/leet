@@ -4,8 +4,6 @@ def solution( array ):
 	for current in array:
 		prod = current * prev
 		maxProd = prod if prod > maxProd else maxProd
-		if (prod > maxProd):
-			maxProd = prod
 		prev = current
 	return maxProd
 
@@ -18,6 +16,9 @@ if __name__ == '__main__':
 
 		def test1( self ):
 			assert solution( [ 3, 6, -2, -5, 7, 3 ] ) == 21
+
+		def test2( self ):
+			assert solution( [ -23 , 4, -3, 8 , -12] ) == 12
 
 
 	unittest.main()
