@@ -2,7 +2,7 @@ import math
 
 
 def solution( year ):
-	return 1 + math.floor( year / 100 )
+	return math.ceil( year / 100 )
 
 
 if __name__ == '__main__':
