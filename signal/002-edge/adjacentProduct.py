@@ -1,5 +1,12 @@
 def solution( array ):
-	return 0
+	prev = 1
+	maxProd = 0
+	for current in array:
+		prod = current * prev
+		if (prod > maxProd) :
+			maxProd = prod
+		prev = current
+	return maxProd
 
 
 if __name__ == '__main__':
