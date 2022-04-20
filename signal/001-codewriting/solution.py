@@ -1,7 +1,8 @@
 
 
 def solution( param1, param2 ):
-	return 3
+	x = 3
+	return x
 
 
 if __name__ == '__main__':
