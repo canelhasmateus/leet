@@ -14,7 +14,7 @@ if __name__ == '__main__':
 			assert solution( 1 ,2 ) == 3
 
 		def test2( self ):
-			assert solution( 2 , 3 ) == 4
+			assert solution( 2 , 3 ) == 5
 
 
 	unittest.main()
