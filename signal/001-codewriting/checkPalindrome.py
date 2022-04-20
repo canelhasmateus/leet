@@ -12,5 +12,11 @@ if __name__ == '__main__':
 		def test1( self ):
 			self.assertTrue( solution( "aabaa" ) )
 
+		def test2( self ):
+			self.assertFalse( solution( "abac" ) )
+
+		def test3( self ):
+			self.assertFalse( solution( "a" ) )
+
 
 	unittest.main()
