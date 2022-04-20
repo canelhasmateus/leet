@@ -1,18 +1,21 @@
 def help( param1 ):
 	prev, *rest = param1
-
+	prevDiff = 0
 	errors = 0
 
 	for current in rest:
-		crescendo = current > prev
+		diff = current - prev
 
-		if crescendo:
+		if current > prev:
 			prev = current
+			prevDiff = diff
 		else:
 			errors += 1
-			if errors > 1:
-				return False
+			
 
+
+		if errors > 1:
+			return False
 
 	return True
 
