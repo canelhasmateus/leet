@@ -9,31 +9,28 @@ def is_increasing( param1 ):
 		prev = current
 	return True
 
-def num_errors( param1 ):
-	if len( param1 ) <= 1:
-		return 0
 
-	prev, *rest = param1
-	a = 0
+def get( tmp , i  , n ) :
 
-	for current in rest:
-		if current <= prev:
-			a += 1
-
-		prev = current
-
-	return a
+	try :
+		if 0 <= i <= len( tmp ):
+			return tmp[i]
+		return n
+	except:
+		return n
 
 def solution( param1 ):
 	tmp = [ i for i in param1]
 
-	
+
 	for i in range(len(param1)):
-		element = tmp.pop( i )
+		element = tmp[i]
+		tmp[i] = get( tmp , i - 1 , 0 ) + 0.001
+
 		if is_increasing( tmp ):
 			return True
+		tmp[i] = element
 
-		tmp.insert( i , element)
 
 	return False
 
