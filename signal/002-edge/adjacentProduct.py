@@ -16,7 +16,7 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			assert solution( [ 3 , 6 , -2 , -5 , 7 , 3 ] == 21 )
+			assert solution( [ 3 , 6 , -2 , -5 , 7 , 3 ] )  == 21
 
 
 	unittest.main()
