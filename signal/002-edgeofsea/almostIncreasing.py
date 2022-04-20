@@ -1,14 +1,19 @@
-def solution( param1 ):
+def help( param1 , n ):
 	head, *rest = param1
 
 	if head and not rest:
-		return True
+		return n
+
+	if head > rest[0]:
+		n += 1
+
+	return help( rest , n )
 
 
-	if head < rest[0] and solution( rest ) :
-		return True
+def solution( param1 ):
+	n = help( param1 , 0)
+	return n <= 1
 
-	return False
 
 
 if __name__ == '__main__':
