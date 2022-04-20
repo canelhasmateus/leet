@@ -1,19 +1,24 @@
-def help( param1 , n ):
-	head, *rest = param1
+def help( param1 ):
+	prev, *rest = param1
 
-	if head and not rest:
-		return n
+	errors = 0
 
-	if head > rest[0]:
-		n += 1
+	for current in rest:
+		crescendo = current > prev
 
-	return help( rest , n )
+		if crescendo:
+			prev = current
+		else:
+			errors += 1
+			if errors > 1:
+				return False
+
+
+	return True
 
 
 def solution( param1 ):
-	n = help( param1 , 0)
-	return n <= 1
-
+	return help( param1 )
 
 
 if __name__ == '__main__':
@@ -23,16 +28,16 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test0( self ):
-			self.assertEquals( solution([ 1 ]), True )
+			self.assertEquals( solution( [ 1 ] ), True )
 
 		def test1( self ):
-			self.assertEquals( solution([ 1, 3, 2,  1]), False )
+			self.assertEquals( solution( [ 1, 3, 2, 1 ] ), False )
 
 		def test2( self ):
-			self.assertEquals( solution([ 1, 3, 2 ]), True )
+			self.assertEquals( solution( [ 1, 3, 2 ] ), True )
 
 		def test3( self ):
-			self.assertEquals( solution([ 1, 2, 1, 2]), False )
+			self.assertEquals( solution( [ 1, 2, 1, 2 ] ), False )
 
 
 	unittest.main()
