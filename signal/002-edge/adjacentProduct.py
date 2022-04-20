@@ -23,5 +23,8 @@ if __name__ == '__main__':
 		def test2( self ):
 			assert solution( [ -23, 4, -3, 8, -12 ] ) == -12
 
+		def test3( self ):
+			assert solution( [ 1, 0 , 1 , 0 , 1000 ] ) == 1
+
 
 	unittest.main()
