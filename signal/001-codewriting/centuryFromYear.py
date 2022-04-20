@@ -1,9 +1,8 @@
 import math
 
 
-def solution( year):
-	return 1 +  math.floor(year / 100)
-
+def solution( year ):
+	return 1 + math.floor( year / 100 )
 
 
 if __name__ == '__main__':
