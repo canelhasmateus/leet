@@ -1,8 +1,5 @@
-import math
-
-
 def solution( param1 ):
-	return math.floor( math.sqrt( 2 ) * param1 * param1 )
+	return 2 * param1 * (param1 - 1) + 1
 
 
 if __name__ == '__main__':
@@ -11,11 +8,14 @@ if __name__ == '__main__':
 
 	class TestSolution( unittest.TestCase ):
 
+		def test0( self ):
+			self.assertEqual( solution( 1 ), 1 )
+
 		def test1( self ):
-			assert solution( 2 ) == 5
+			self.assertEqual( solution( 2 ), 5 )
 
 		def test2( self ):
-			assert solution( 3 ) == 13
+			self.assertEqual( solution( 3 ), 13 )
 
 
 	unittest.main()
