@@ -25,7 +25,7 @@ def solution( param1 ):
 
 	for i in range(len(param1)):
 		element = tmp[i]
-		tmp[i] = (get( tmp , i - 1 , 0 ) + get( tmp , i +1 , element )) / 2
+		tmp[i] = (get( tmp , i - 1 , 0 ) + element )/ 2
 
 		if is_increasing( tmp ):
 			return True
