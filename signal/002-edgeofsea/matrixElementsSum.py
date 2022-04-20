@@ -31,7 +31,7 @@ if __name__ == '__main__':
 			          [0, 5, 0, 1],
 			          [2, 1, 3, 10]]
 
-			self.assertEquals( solution( matrix ), 8 )
+			self.assertEquals( solution( matrix ), 9 )
 
 
 	unittest.main()
