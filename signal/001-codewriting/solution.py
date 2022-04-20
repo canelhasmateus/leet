@@ -11,7 +11,7 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			assert True
+			assert solution( 1 ,2 ) == 3
 
 
 	unittest.main()
