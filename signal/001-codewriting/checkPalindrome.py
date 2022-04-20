@@ -10,9 +10,7 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			isPalindrome = solution( "aabaa" )
-
-			self.assertTrue( isPalindrome )
+			self.assertTrue( solution( "aabaa" ) )
 
 
 	unittest.main()
