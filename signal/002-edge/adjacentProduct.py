@@ -2,9 +2,10 @@ import math
 
 
 def solution( array ):
-	prev = 1
+	prev , *rest = array
+
 	maxProd = -math.inf
-	for current in array:
+	for current in rest:
 		prod = current * prev
 		maxProd = prod if prod > maxProd else maxProd
 		prev = current
