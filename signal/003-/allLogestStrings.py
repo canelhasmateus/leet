@@ -1,5 +1,5 @@
-def solution( param1, param2 ):
-	...
+def solution( strings ):
+	return strings
 
 
 if __name__ == '__main__':
@@ -9,7 +9,7 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			self.assertEquals( False, True )
+			self.assertEquals( solution( [ "aba", "aa", "ad", "vcd", "aba" ] ), [ "aba", "vcd", "aba" ] )
 
 
 	unittest.main()
