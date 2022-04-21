@@ -14,7 +14,7 @@ def solution( param1 ):
 			rightSum += element
 
 
-	return False
+	return leftSum == rightSum
 
 
 if __name__ == '__main__':
