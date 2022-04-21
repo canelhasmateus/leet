@@ -38,6 +38,8 @@ if __name__ == '__main__':
 
 		def test1( self ):
 			self.assertEquals( solution( "(bar)" ), "rab" )
+		def test2( self ):
+			self.assertEquals( solution( "foo(bar)baz" ), "foorabbaz" )
 
 
 	unittest.main()
