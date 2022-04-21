@@ -6,7 +6,7 @@ pattern = re.compile( "\([a-zA-Z]+\)" )
 def solution( param1 ):
 	match = pattern.match( param1 )
 	if match:
-		return match.group( 0 )[ ::-1 ]
+		return param1.replace( "(" , "" ).replace(")" , "")[::-1]
 
 
 	return ""
