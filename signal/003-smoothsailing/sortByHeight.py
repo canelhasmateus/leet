@@ -1,5 +1,19 @@
 def solution( param1 ):
-	return param1
+	people = [ ]
+	trees = [ ]
+
+	for i, value in enumerate( param1 ):
+
+		if value == -1:
+			trees.append( i )
+		else:
+			people.append( value )
+
+	people = [ i for i in sorted( people ) ]
+	for position in trees:
+		people.insert( position, -1 )
+
+	return people
 
 
 if __name__ == '__main__':
