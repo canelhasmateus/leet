@@ -1,3 +1,8 @@
+import time
+
+
+def solution2(s):
+	return eval('"' + s.replace('(', '"+("').replace(')', '")[::-1]+"') + '"')
 
 def solution( param1 ):
 
@@ -40,6 +45,17 @@ if __name__ == '__main__':
 			self.assertEquals( solution( "(bar)" ), "rab" )
 		def test2( self ):
 			self.assertEquals( solution( "foo(bar)baz" ), "foorabbaz" )
+		def test3( self ):
+			self.assertEquals( solution( "foo(bar)baz(blim)" ), "foorabbazmilb" )
+		def test4( self ):
+			self.assertEquals( solution( "foo(bar(baz))blim" ), "foobazrabblim" )
 
 
-	unittest.main()
+	start= time.time()
+	for i in range( 10000 ):
+
+		solution( "foo(bar(baz))blim" )
+	finish = time.time()
+
+	print(finish - start)
+	# unittest.main()
