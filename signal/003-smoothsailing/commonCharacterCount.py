@@ -1,5 +1,4 @@
 def solution( param1, param2 ):
-
 	counts = {}
 
 	for left in param1:
@@ -11,7 +10,6 @@ def solution( param1, param2 ):
 		if current_count > 0:
 			total += 1
 			counts[ right ] = current_count - 1
-
 
 	return total
 
