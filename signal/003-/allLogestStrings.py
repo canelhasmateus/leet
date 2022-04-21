@@ -1,9 +1,7 @@
 def solution( strings ):
 	longest = max( map( len, strings ) )
 
-	return [
-		i for i in filter( lambda x: len( x ) == longest,
-		                   strings ) ]
+	return [ i for i in strings if len( i ) == longest ]
 
 
 if __name__ == '__main__':
