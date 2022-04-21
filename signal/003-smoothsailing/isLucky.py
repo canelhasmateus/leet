@@ -27,7 +27,7 @@ if __name__ == '__main__':
 			self.assertEquals( solution( 1230 ), True )
 
 		def test2( self ):
-			self.assertEquals( solution( 239017 ), True )
+			self.assertEquals( solution( 239017 ), False )
 
 
 	unittest.main()
