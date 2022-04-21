@@ -2,3 +2,5 @@
 *.pyc
 *.exe
 private/*
+**/.pytest_cache/*
+**/.hypothesis/*
