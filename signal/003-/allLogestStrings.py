@@ -1,5 +1,9 @@
 def solution( strings ):
-	return strings
+	longest = max( map( len, strings ) )
+
+	return [
+		i for i in filter( lambda x: len( x ) == longest,
+		                   strings ) ]
 
 
 if __name__ == '__main__':
