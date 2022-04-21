@@ -3,10 +3,12 @@ import re
 pattern = re.compile( "\([a-zA-Z]+\)" )
 
 
+def removeBrackets( arg ):
+	return arg.replace( "(" , "" ).replace(")" , "")
 def solution( param1 ):
 	match = pattern.match( param1 )
 	if match:
-		return param1.replace( "(" , "" ).replace(")" , "")[::-1]
+		return removeBrackets( match.group() )[::-1]
 
 
 	return ""
