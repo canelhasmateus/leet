@@ -1,37 +1,33 @@
 
 def solution( param1 ):
 
-	if param1 == "":
-		return ""
 
-	concat = [ "" for i in range( len(param1) )]
+	size = len( param1)
+	left = 0
+	concat = ""
+	while left < size:
+		char = param1[left]
 
+		if char == "(":
+			depth = 1
+			right = left + 1
 
-	leftProng = 0
-	rightProng = len( param1 )
+			while depth > 0:
+				rChar = param1[right]
+				if rChar == ")":
+					depth -= 1
+				elif rChar == "(":
+					depth += 1
 
-	while leftProng < rightProng:
+				right += 1
 
-
-		leftChar = param1[ leftProng ]
-		rightChar = param1[ rightProng ]
-
-		if leftChar == "(" or rightChar == ")":
-			while rightChar != ")":
-				rightProng -= 1
-			while leftChar != "(":
-				leftProng += 1
-
-			parSolution = solution( param1[leftProng : rightProng] )
-			concat[ leftProng:rightProng] = parSolution
-
+			concat += solution( param1[ left + 1 : right - 1] )[::-1]
+			left = right
 		else:
-			concat[leftProng] = leftChar
-			concat[rightProng] = rightChar
-			leftProng+=1
-			rightProng-=1
+			concat += char
+			left += 1
 
-	return "".join( concat )
+	return concat
 
 
 if __name__ == '__main__':
