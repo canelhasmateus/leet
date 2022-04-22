@@ -1,5 +1,5 @@
 def solution( param1):
-	return 3
+	return 0
 
 
 if __name__ == '__main__':
