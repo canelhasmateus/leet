@@ -2,13 +2,9 @@ def solution( param1, param2 ):
 	if param1 == param2:
 		return True
 
-	seen = set( param1 )
-	for element in param2:
-		if element not in seen:
-			return False
-
-	return True
-
+	difference = set( param1 ).difference( set( param2 ) )
+	return len( difference ) == 0
+	
 
 if __name__ == '__main__':
 	import unittest
