@@ -1,13 +1,19 @@
 def solution( param1, param2 ):
-	if param1 == param2:
-		return True
 
+	Lwrong = None
+	Rwrong = None
 	errors = 0
 	for left, right in zip( param1, param2 ):
 		if left != right:
 			errors += 1
+			if Lwrong is None:
+				Lwrong = left
+				Rwrong = right
+			else:
+				if Rwrong != left or Lwrong != right:
+					return False
 
-	if errors not in [ 0, 2 ]:
+	if errors not in [ 0 , 2]:
 		return False
 	return True
 
