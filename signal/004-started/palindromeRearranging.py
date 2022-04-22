@@ -1,10 +1,10 @@
 def solution( param1 ):
 	count = {}
-	sum_oddness = 0
 	for character in param1:
-		new_count = count.get( character, 0 ) + 1
-		count[ character ] = new_count
-		sum_oddness += 	new_count % 2
+		count[ character ] = count.get( character, 0 ) + 1
+
+	evens = map( lambda x: x % 2,
+	             count.values() )
 
 	return sum( evens ) <= 1
 
