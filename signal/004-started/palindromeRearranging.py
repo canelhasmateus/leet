@@ -1,13 +1,12 @@
 def solution( param1 ):
 	count = {}
 	for character in param1:
-		count[ character ] = count.get( character , 0 ) + 1
+		count[ character ] = count.get( character, 0 ) + 1
 
-	res = 0
-	for value in count.values():
-		res += value % 2
+	evens = map( lambda x: x % 2,
+	             count.values() )
 
-	return res <= 1
+	return sum( evens ) <= 1
 
 
 if __name__ == '__main__':
