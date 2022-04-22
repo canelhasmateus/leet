@@ -2,8 +2,14 @@ def solution( param1, param2 ):
 	if param1 == param2:
 		return True
 
-	difference = set( param1 ).difference( set( param2 ) )
-	return len( difference ) == 0
+	errors = 0
+	for left, right in zip( param1, param2 ):
+		if left != right:
+			errors += 1
+
+	if errors not in [ 0, 2 ]:
+		return False
+	return True
 
 
 if __name__ == '__main__':
