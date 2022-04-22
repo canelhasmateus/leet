@@ -1,3 +1,7 @@
+def solution2( A, B ):
+	return sorted( A ) == sorted( B ) and sum( [ a != b for a, b in zip( A, B ) ] ) <= 2
+
+
 def solution( param1, param2 ):
 	Lwrong = None
 	Rwrong = None
@@ -40,3 +44,4 @@ if __name__ == '__main__':
 
 
 	unittest.main()
+
