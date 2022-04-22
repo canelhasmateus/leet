@@ -9,7 +9,7 @@ def solution( param1, param2 ):
 				Lwrong = left
 				Rwrong = right
 			else:
-				if Lwrong != right :
+				if Lwrong != right or Rwrong != left:
 					return False
 			if errors > 2:
 				return False
