@@ -5,15 +5,14 @@ def solution( param1, param2 ):
 	for left, right in zip( param1, param2 ):
 		if left != right:
 			errors += 1
-			if errors > 2:
-				return False
-
 			if Lwrong is None:
 				Lwrong = left
 				Rwrong = right
 			else:
-				if Rwrong != left or Lwrong != right:
+				if Lwrong != right :
 					return False
+			if errors > 2:
+				return False
 
 	return True
 
@@ -35,6 +34,9 @@ if __name__ == '__main__':
 
 		def test4( self ):
 			self.assertEquals( solution( [ 1, 1, 4 ], [ 1, 2, 3 ] ), False )
+
+		def test5( self ):
+			self.assertEquals( solution( [ 1, 2, 3 ], [ 1, 10, 2 ] ), False )
 
 
 	unittest.main()
