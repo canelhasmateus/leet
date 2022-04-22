@@ -27,5 +27,8 @@ if __name__ == '__main__':
 		def test3( self ):
 			self.assertEquals( solution( [ 1, 2, 2 ], [ 2, 1, 1 ] ), False )
 
+		def test4( self ):
+			self.assertEquals( solution( [ 1, 1, 4 ], [ 1, 2, 3 ] ), False )
+
 
 	unittest.main()
