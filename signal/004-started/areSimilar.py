@@ -4,7 +4,7 @@ def solution( param1, param2 ):
 
 	difference = set( param1 ).difference( set( param2 ) )
 	return len( difference ) == 0
-	
+
 
 if __name__ == '__main__':
 	import unittest
@@ -17,6 +17,9 @@ if __name__ == '__main__':
 
 		def test2( self ):
 			self.assertEquals( solution( [ 1, 2, 3 ], [ 2, 1, 3 ] ), True )
+
+		def test3( self ):
+			self.assertEquals( solution( [ 1, 2, 2 ], [ 2, 1, 1 ] ), False )
 
 
 	unittest.main()
