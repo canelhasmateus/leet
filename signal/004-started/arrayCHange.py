@@ -20,5 +20,8 @@ if __name__ == '__main__':
 		def test1( self ):
 			self.assertEquals( solution( [ 1, 1, 1 ] ), 3 )
 
+		def test2( self ):
+			self.assertEquals( solution( [ -1000, 0, -2, 0 ] ), 5 )
+
 
 	unittest.main()
