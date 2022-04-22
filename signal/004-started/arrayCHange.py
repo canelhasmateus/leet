@@ -1,5 +1,13 @@
 def solution( param1):
-	return 0
+	prev, *rest = param1
+	running_error = 0
+	for current in rest:
+		if ( current <= prev ) :
+			diff = abs( current - prev ) 
+			running_error += running_error + diff  + 1
+
+		prev = current
+	return running_error
 
 
 if __name__ == '__main__':
