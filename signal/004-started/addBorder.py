@@ -1,6 +1,6 @@
 def solution( picture ):
-	length = len( picture[ 0 ] )
-	res = [ "*" * length ]
+	length = len( picture[ 0 ] ) + 2
+	res = [ "*" * length  ]
 	for element in picture:
 		res.append( "*" + element + "*" )
 	res.append("*" * length)
