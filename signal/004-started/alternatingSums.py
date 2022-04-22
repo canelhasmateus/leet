@@ -1,3 +1,7 @@
+def solution2(a):
+
+	return [sum(a[::2]),sum(a[1::2])]
+
 def solution( param1):
 
 	res = [ 0 , 0 ]
