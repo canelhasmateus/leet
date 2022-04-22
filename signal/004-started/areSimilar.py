@@ -1,4 +1,8 @@
 def solution( param1, param2 ):
+
+	if param1 == param2:
+		return True
+	
 	return False
 
 
