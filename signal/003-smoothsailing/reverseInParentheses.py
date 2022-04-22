@@ -1,5 +1,30 @@
 import time
 
+def solution4(inputString):
+	stack = []
+
+	for x in inputString:
+		if x == ")":
+			tmp = ""
+			while stack[-1] != "(":
+				tmp += stack.pop()
+			stack.pop() # pop the (
+			for item in tmp:
+				stack.append(item)
+		else:
+			stack.append(x)
+
+	return "".join(stack)
+
+
+def solution3(s):
+	for i in range(len(s)):
+		if s[i] == "(":
+			start = i
+		if s[i] == ")":
+			end = i
+			return solution(s[:start] + s[start+1:end][::-1] + s[end+1:])
+	return s
 
 def solution2(s):
 	return eval('"' + s.replace('(', '"+("').replace(')', '")[::-1]+"') + '"')
@@ -52,9 +77,10 @@ if __name__ == '__main__':
 
 
 	start= time.time()
-	for i in range( 10000 ):
+	for i in range( 1000000 ):
 
-		solution( "foo(bar(baz))blim" )
+		solution4( "foo(bar(baz))blim" )
+
 	finish = time.time()
 
 	print(finish - start)
