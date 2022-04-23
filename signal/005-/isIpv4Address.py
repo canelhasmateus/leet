@@ -1,13 +1,15 @@
 import re
 
 
+pattern = re.compile( "^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$"
+                      "")
 def solution( param1 ):
-	digits = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-	digits = { str( i ) for i in digits }
 
-	splits = param1.split( "." )
-	if len( splits ) != 4:
+	match = pattern.match(param1)
+	if not match:
 		return False
+
+	splits = match.groups()
 
 	for g , group in enumerate( splits ):
 
@@ -15,9 +17,6 @@ def solution( param1 ):
 			return False
 
 		for i , character in enumerate( group ):
-			if character not in digits:
-				return False
-
 			if character == "0" and i == 0:
 				if len( group ) > 1:
 					return False
