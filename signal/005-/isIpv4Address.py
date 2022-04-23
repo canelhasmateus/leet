@@ -1,5 +1,12 @@
+import re
+
+pattern = re.compile("\d{1,3}\.\d{1,3}\.\d{1,3}")
 def solution( param1):
-	return None
+	if pattern.match( param1):
+
+		return True
+	return Falser
+
 
 
 if __name__ == '__main__':
