@@ -22,7 +22,7 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			self.assertEquals( [2, 4, 1, 0], 2 )
+			self.assertEquals( solution([2, 4, 1, 0]), 3 )
 
 
 	unittest.main()
