@@ -9,9 +9,11 @@ def solution( param1 ):
 	if len( splits ) != 4:
 		return False
 
-	for group in splits:
+	for g , group in enumerate( splits ):
+
 		if len( group) == 0:
 			return False
+
 		for i , character in enumerate( group ):
 			if character not in digits:
 				return False
@@ -22,6 +24,8 @@ def solution( param1 ):
 
 		number = int(group)
 		if number < 0 or number > 255:
+			return False
+		if g == 0 and number == 0:
 			return False
 
 	return True
