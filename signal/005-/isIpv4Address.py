@@ -13,17 +13,13 @@ def solution( param1 ):
 
 	for g , group in enumerate( splits ):
 
-		if len( group) == 0:
-			return False
-
-		for i , character in enumerate( group ):
-			if character == "0" and i == 0:
-				if len( group ) > 1:
-					return False
-
 		number = int(group)
 		if number < 0 or number > 255:
 			return False
+
+		if group[0] == "0":
+			if len( group) > 1:
+				return False
 
 	return True
 
@@ -49,5 +45,5 @@ if __name__ == '__main__':
 		def test5( self ):
 			self.assertEquals( solution( "0.254.255.0" ), True )
 
-
-	unittest.main()
+	
+	# unittest.main()
