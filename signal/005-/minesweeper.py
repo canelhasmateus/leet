@@ -55,7 +55,13 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			self.assertEquals( False, True )
+			matrix = [ [ True, False, False ],
+			           [ False, True, False ],
+			           [ False, False, False ] ]
+
+			self.assertEquals( solution( matrix ), [ [ 1, 2, 1 ],
+			                                         [ 2, 1, 1 ],
+			                                         [ 1, 1, 1 ] ] )
 
 
 	unittest.main()
