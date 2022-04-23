@@ -1,6 +1,6 @@
 import re
 
-pattern = re.compile("(\d{1,3})\.(\d{1,3})\.(\d{1,3})")
+pattern = re.compile("^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$")
 def solution( param1):
 	match = pattern.match( param1)
 	if match:
@@ -25,6 +25,9 @@ if __name__ == '__main__':
 			self.assertEquals( solution( "172.316.254.1"), False )
 		def test3( self ):
 			self.assertEquals( solution( ".254.255.0"), False )
+
+		def test4( self ):
+			self.assertEquals( solution( "1.1.1.1a"), False )
 
 
 	unittest.main()
