@@ -2,7 +2,7 @@ import re
 
 
 def solution( param1 ):
-	digits = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+	digits = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 	digits = { str( i ) for i in digits }
 
 	splits = param1.split( "." )
