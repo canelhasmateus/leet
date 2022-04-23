@@ -1,5 +1,5 @@
-def solution( param1, param2 ):
-	...
+def solution( param1):
+	return None
 
 
 if __name__ == '__main__':
