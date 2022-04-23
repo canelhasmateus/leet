@@ -24,7 +24,7 @@ if __name__ == '__main__':
 		def test2( self ):
 			self.assertEquals( solution( "172.316.254.1"), False )
 		def test3( self ):
-			self.assertEquals( solution( ".254.255.0"), True )
+			self.assertEquals( solution( ".254.255.0"), False )
 
 
 	unittest.main()
