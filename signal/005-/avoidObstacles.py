@@ -3,15 +3,10 @@ def solution( obstacles ):
 	while True:
 		i += 1
 
-		multiple = map( lambda x : x % i == 0, obstacles)
+		multiple = map( lambda x: x % i == 0, obstacles )
 
 		if not any( multiple ):
 			return i
-	
-
-
-
-
 
 
 if __name__ == '__main__':
