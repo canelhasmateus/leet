@@ -14,15 +14,12 @@ def solution( matrix ):
 		for j in range( length ):
 			if matrix[ i ][ j ]:
 				for r, c in itertools.product( (-1, 0, 1), (-1, 0, 1) ):
-					if r == c == 0:
-						continue
-						
 					newI = i + r
 					newJ = j + c
 
-
 					if 0 <= newI < height and 0 <= newJ < length:
 						res[ newI ][ newJ ] += 1
+				res[ i ][ j ] -= 1
 
 	return res
 
