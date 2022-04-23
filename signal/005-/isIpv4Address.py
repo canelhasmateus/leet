@@ -25,21 +25,8 @@ def solution( param1 ):
 		number = int(group)
 		if number < 0 or number > 255:
 			return False
-		if g == 0 and number == 0:
-			return False
 
 	return True
-
-
-
-
-	match = pattern.match( param1 )
-	if match:
-		for digits in match.groups():
-			if 0 <= int( digits ) > 255:
-				return False
-		return True
-	return False
 
 
 if __name__ == '__main__':
@@ -59,6 +46,9 @@ if __name__ == '__main__':
 
 		def test4( self ):
 			self.assertEquals( solution( "1.1.1.1a" ), False )
+
+		def test5( self ):
+			self.assertEquals( solution( "0.254.255.0" ), True )
 
 
 	unittest.main()
