@@ -10,7 +10,8 @@ def solution( param1 ):
 		return False
 
 	for group in splits:
-
+		if len( group) == 0:
+			return False
 		for i , character in enumerate( group ):
 			if character not in digits:
 				return False
@@ -18,6 +19,10 @@ def solution( param1 ):
 			if character == "0" and i == 0:
 				if len( group ) > 1:
 					return False
+
+		number = int(group)
+		if number < 0 or number > 255:
+			return False
 
 	return True
 
