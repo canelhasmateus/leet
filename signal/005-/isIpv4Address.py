@@ -1,15 +1,36 @@
 import re
 
-pattern = re.compile("^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$")
-def solution( param1):
-	match = pattern.match( param1)
+
+def solution( param1 ):
+	digits = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+	digits = { str( i ) for i in digits }
+
+	splits = param1.split( "." )
+	if len( splits ) != 4:
+		return False
+
+	for group in splits:
+
+		for i , character in enumerate( group ):
+			if character not in digits:
+				return False
+
+			if character == "0" and i == 0:
+				if len( group ) > 1:
+					return False
+
+	return True
+
+
+
+
+	match = pattern.match( param1 )
 	if match:
 		for digits in match.groups():
-			if 0 <= int(digits) > 255:
+			if 0 <= int( digits ) > 255:
 				return False
 		return True
 	return False
-
 
 
 if __name__ == '__main__':
@@ -19,15 +40,16 @@ if __name__ == '__main__':
 	class TestSolution( unittest.TestCase ):
 
 		def test1( self ):
-			self.assertEquals( solution( "172.16.254.1"), True )
+			self.assertEquals( solution( "172.16.254.1" ), True )
 
 		def test2( self ):
-			self.assertEquals( solution( "172.316.254.1"), False )
+			self.assertEquals( solution( "172.316.254.1" ), False )
+
 		def test3( self ):
-			self.assertEquals( solution( ".254.255.0"), False )
+			self.assertEquals( solution( ".254.255.0" ), False )
 
 		def test4( self ):
-			self.assertEquals( solution( "1.1.1.1a"), False )
+			self.assertEquals( solution( "1.1.1.1a" ), False )
 
 
 	unittest.main()
