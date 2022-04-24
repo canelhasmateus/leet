@@ -1,5 +1,19 @@
+def zigzag( a , b , c ):
+	if a < b > c or a > b < c:
+		return 1
+	return 0
+
+
 def solution( numbers ):
-	return []
+
+	res = []
+	for i in range( len( numbers ) - 2 ):
+
+		first, second, third = numbers[ i : i + 3 ]
+		z = zigzag( first , second , third)
+		res.append( z )
+
+	return res
 
 
 if __name__ == '__main__':
