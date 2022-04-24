@@ -1,5 +1,12 @@
 def solution( words ):
-	return 0
+
+	count = 0
+	for i in range( len( words) - 1):
+		for j in range( i + 1 , len(words)):
+			if words[j].startswith( words[i]) or words[i].startswith( words[j]):
+				count+=1
+
+	return count
 
 
 if __name__ == '__main__':
