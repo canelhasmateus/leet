@@ -1,7 +1,3 @@
-def zigzag( a , b , c ):
-	if a < b > c or a > b < c:
-		return 1
-	return 0
 
 
 def solution( numbers ):
@@ -10,7 +6,12 @@ def solution( numbers ):
 	for i in range( len( numbers ) - 2 ):
 
 		first, second, third = numbers[ i : i + 3 ]
-		z = zigzag( first , second , third)
+
+		if first < second > third or first > second < third:
+			z = 1
+		else:
+			z = 0
+
 		res.append( z )
 
 	return res
