@@ -29,7 +29,7 @@ if __name__ == '__main__':
 		def test1( self ):
 			self.assertEquals( solution( "codesignal") , "cadosegnil")
 		def test2( self ):
-			self.assertEquals( solution( "plain text") , "plean tix")
+			self.assertEquals( solution( "plain text") , "plean tixt")
 
 
 	unittest.main()
