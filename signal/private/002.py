@@ -30,6 +30,9 @@ if __name__ == '__main__':
 			self.assertEquals( solution( "codesignal") , "cadosegnil")
 		def test2( self ):
 			self.assertEquals( solution( "plain text") , "plean tixt")
+		def test3( self ):
+			self.assertEquals( solution( "some message with punctuation marks, e.g. commas, dots, etc.")
+			                   , "semo messega weth pinctuutain morks, a.g. cemmos, dats, otc.")
 
 
 	unittest.main()
