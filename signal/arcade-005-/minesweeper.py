@@ -1,6 +1,4 @@
-import copy
 import itertools
-import math
 
 
 def solution( matrix ):
@@ -13,7 +11,7 @@ def solution( matrix ):
 	for i in range( height ):
 		for j in range( length ):
 			if matrix[ i ][ j ]:
-				for r, c in itertools.product( (-1, 0, 1), (-1, 0, 1) ):
+				for r, c in itertools.product( (-1, 0, 1), repeat=2 ):
 					newI = i + r
 					newJ = j + c
 
