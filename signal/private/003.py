@@ -1,8 +1,27 @@
+import random
+
+
 def solution( matrix, framesize ):
 
-	
+	# I don't know how to calculate, but this seems game-able
 
-	return 0
+
+
+	seen = set()
+	i = 0
+	possibilities = [ ]
+	reset_n = framesize * framesize
+	for row in matrix:
+		for element in row:
+			seen.add(element)
+			if i % reset_n == 0:
+				possibilities.append( sum( seen) )
+				seen = set()
+
+
+
+
+	return random.choice( possibilities)
 
 
 
