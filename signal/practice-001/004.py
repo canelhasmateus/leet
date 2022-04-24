@@ -1,10 +1,23 @@
 def solution( numbers, k ):
-	count = 0
-	for i in range( len( numbers)  - 1):
-		for j in range( i + 1,  len(numbers)):
+	res = {}
+	for i in range( len( numbers) ):
+		remainder = i % k
+		res[remainder] = res.get( remainder , 0) + 1
 
-			if (numbers[i] + numbers[j]) % k == 0:
-				count += 1
+
+	count = 0
+	for i , seen in res.items():
+
+		if i == 0:
+			count += seen * (seen - 1)
+			res[i] = 0
+
+		else:
+			complement = k - i
+			count += seen * res.get( complement , 0)
+			res[i] = 0
+			res[complement] = 0
+	
 	return count
 
 
