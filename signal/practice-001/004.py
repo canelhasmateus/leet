@@ -1,11 +1,11 @@
 def solution( numbers, k ):
 	res = {}
 	count = 0
-	for i in range( len( numbers) ):
-		remainder = i % k
-		complement = k - remainder
+	for number in numbers:
+		remainder = number % k
+		complement = 0 if remainder == 0 else k - remainder
 
-		complements = res.get( complement , 0)
+		complements = res.get( complement, 0)
 		count += complements
 
 		res[remainder] = res.get( remainder , 0) + 1
