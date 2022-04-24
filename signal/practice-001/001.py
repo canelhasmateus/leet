@@ -27,7 +27,10 @@ if __name__ == '__main__':
 			self.assertEquals( solution( [ 1, 2 , 1 , 3, 4] ), [1 , 1 ,0] )
 
 		def test2( self ):
-			self.assertEquals( solution( [ 1, 2 , 3, 4] ), [0 , 1] )
+			self.assertEquals( solution( [ 1, 2 , 3, 4] ), [0 , 0] )
+
+		def test3( self ):
+			self.assertEquals( solution( [ 1000000000 , 1000000000 , 1000000000] ), [0 ] )
 
 
 	unittest.main()
