@@ -33,4 +33,3 @@ if __name__ == '__main__':
 			self.assertEquals( solution( [ 1000000000 , 1000000000 , 1000000000] ), [0 ] )
 
 
-	unittest.main()
