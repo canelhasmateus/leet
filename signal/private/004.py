@@ -2,7 +2,7 @@ def solution( words ):
 	count = 0
 
 	for i in range( len( words ) - 1 ):
-		for j in range( i, len( words ) ):
+		for j in range( i + 1, len( words ) ):
 			if words[ i ].startswith( words[ j ] ) or words[ j ].startswith( words[ i ] ):
 				count += 1
 
