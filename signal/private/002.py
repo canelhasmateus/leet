@@ -1,11 +1,14 @@
 def solution( message ):
 
+	vowels = {"a", "e", "i", "o", "u"}
 	res = []
+
 	lastVowel = None
 	firstVowel = 0
+
 	for i , c in enumerate( message ):
 
-		if c in { "a" , "e" , "i" , "o" , "u"}:
+		if c in vowels:
 			if lastVowel:
 				res.append( lastVowel)
 			else:
@@ -15,8 +18,8 @@ def solution( message ):
 			res.append( c )
 
 
-
-	res.insert( firstVowel , lastVowel)
+	if lastVowel:
+		res.insert( firstVowel , lastVowel)
 	return "".join( res)
 
 
