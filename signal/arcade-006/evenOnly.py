@@ -1,5 +1,8 @@
-def solution( param1):
-	return False
+def solution( number ):
+	for character in str( number ):
+		if (int( character) % 2 != 0):
+			return False
+	return True
 
 
 if __name__ == '__main__':
