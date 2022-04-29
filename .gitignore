@@ -1,6 +1,6 @@
 .idea/*
 *.pyc
 *.exe
-private/*
+**/private/*
 **/.pytest_cache/*
 **/.hypothesis/*
