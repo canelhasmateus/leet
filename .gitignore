@@ -4,3 +4,6 @@
 **/private/*
 **/.pytest_cache/*
 **/.hypothesis/*
+
+**/out/*
+**/venv/*
