@@ -1,0 +1,17 @@
+name = "dixie"
+uuid = "16932d70-1ca3-4e8d-9a25-95b680894d98"
+authors = ["Mateus Canelhas"]
+version = "0.1.0"
+
+[deps]
+Match = "7eb4fadd-790c-5f42-8a69-bfa0b872bfbf"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
+

@@ -4,6 +4,7 @@
 **/private/*
 **/.pytest_cache/*
 **/.hypothesis/*
-
+**/node_modules/*
 **/out/*
 **/venv/*
+/production
