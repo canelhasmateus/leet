@@ -71,5 +71,5 @@ if __name__ == '__main__':
 			self.assertEquals( solution( " " ), True )
 
 
-	print( whitespace( "\n"))
+
 	unittest.main()
